@@ -6,6 +6,7 @@ const router = express.Router()
 router.get('/:userId', async (req, res) => {
   const { userId } = req.params
   const userOperations = await OperationsModel.getOperations(userId)
+  res.status(200)
   res.send(userOperations)
 })
 
